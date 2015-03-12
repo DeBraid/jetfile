@@ -1,11 +1,44 @@
 @Posts = new Meteor.Collection('posts');
 
 Schemas.Posts = new SimpleSchema
-	title:
+	summary:
+		type:String
+		max: 80
+
+	name:
 		type:String
 		max: 60
 
-	content:
+	email:
+		type:String
+		max: 30
+
+	position:
+		type:String
+		max: 30
+
+	department:
+		type:String
+		max: 30
+
+	location:
+    type: String
+    optional: true
+    autoform:
+      type: 'map'
+      geolocation: true
+      searchBox: true
+      autolocate: true
+
+	injury:
+		type:String
+		max: 60
+
+	damage:
+		type:String
+		max: 60		
+
+	description:
 		type: String
 		autoform:
 			rows: 5
@@ -25,6 +58,7 @@ Schemas.Posts = new SimpleSchema
 
 	picture:
 		type: String
+		optional: true
 		autoform:
 			afFieldInput:
 				type: 'fileUpload'

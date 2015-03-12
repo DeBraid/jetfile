@@ -21,10 +21,19 @@
 				<h3 class="panel-title">Add a Post</h3>
 			</div>
 			<div class="panel-body">
+				<h1>{{ name }}</h1>
 				{{#autoForm id="add" collection="Posts" type="insert"}}
-				{{> afQuickField name="title"}}
-				{{> afQuickField name="content"}}
+				{{> afQuickField name="summary" }}
+				{{> afQuickField name="name" }}
+				{{> afQuickField name="email" }}
+				{{> afQuickField name="position" }}
+				{{> afQuickField name="department" }}
+				{{> afQuickField name="location" }}
+				{{> afQuickField name="country" }}
+				{{> afQuickField name="description" }}
 				<!-- {{> afQuickField name="picture"}} -->
+				{{> afQuickField name="injury" }}
+				{{> afQuickField name="damage" }}
 				{{> afQuickField name="picture"}}
 				<!-- {{> afFileUpload name="picture" collection="Attachments"}} -->
 				<button type="submit" class="btn btn-primary">Add Post</button>
@@ -49,7 +58,8 @@
 		<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
-						{{title}}
+						Summary: {{ summary }}
+						Created by: {{ owner }}
 						<span class="pull-right">
 							<i class="fa fa-thumbs-up"></i> {{favoriteCount _id}}
 							<i class="fa fa-comments"></i> {{commentCount _id}}
@@ -100,7 +110,8 @@
 			<ul>
 			{{#each Favorites 'Posts'}}
 				<li>
-					<a>{{title}}</a>
+					<a>Summary: {{ summary }}</a>
+					<a>Created by: {{ owner }}</a>
 				</li>
 			{{/each}}
 			</ul>

@@ -1,10 +1,10 @@
 if Meteor.isServer
 	PrettyEmail.options = 
-		facebook: 'http://facebook.com/onthecode'
-		twitter: 'http://twitter.com/BenPeterJones'
-		website: 'http://benjaminpeterjones.com'
+		facebook: 'http://facebook.com/'
+		twitter: 'http://twitter.com/Royal_Arse'
+		website: 'http://cacheflow.ca'
 
-		siteName: 'Meteor Starter'
-		companyAddress: 'Jessnerstrasse 18, 12047 Berlin'
-		companyName: 'Code to Create'
-		companyUrl: 'http://code2create.com'
+		siteName: 'Jetfile'
+		companyAddress: 'Toronto, ON'
+		companyName: 'Jetfile'
+		companyUrl: 'http://jetfile.meteor.com'
