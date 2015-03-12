@@ -14,4 +14,4 @@ if Meteor.isClient
 				homeRoute: '/'
 				dashboardRoute: '/dashboard'
 				profileRoute: 'profile'
-				passwordSignupFields: 'EMAIL_ONLY'
+				passwordSignupFields: 'USERNAME_AND_EMAIL'

@@ -1,12 +1,11 @@
 <template name="dashboard">
 	<div class="container">
 		<div class="row" id="champion-messages">
-			<div class="col-md-3">
-				{{> add}}
-				<!-- {{> addWithModal}} -->
+			<div class="col-sm-4">
 				{{> favorites}}
+				{{> add}}
 			</div>
-			<div class="col-md-9">
+			<div class="col-sm-8">
 				{{> alert}}
 				{{> posts}}
 			</div>
@@ -18,10 +17,9 @@
 <template name="add">
 	<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Add a Post</h3>
+				<h3 class="panel-title">Create Report</h3>
 			</div>
 			<div class="panel-body">
-				<h1>{{ name }}</h1>
 				{{#autoForm id="add" collection="Posts" type="insert"}}
 				{{> afQuickField name="summary" }}
 				{{> afQuickField name="name" }}
@@ -59,7 +57,6 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">
 						Summary: {{ summary }}
-						Created by: {{ owner }}
 						<span class="pull-right">
 							<i class="fa fa-thumbs-up"></i> {{favoriteCount _id}}
 							<i class="fa fa-comments"></i> {{commentCount _id}}
@@ -104,14 +101,13 @@
 	{{#if Favorites 'Posts'}}
 	<div class="panel panel-default">
 		<div class="panel-heading">
-				<h3 class="panel-title">Favorites</h3>
+				<h3 class="panel-title">Priority List</h3>
 		</div>
 		<div class="panel-body">
 			<ul>
 			{{#each Favorites 'Posts'}}
 				<li>
-					<a>Summary: {{ summary }}</a>
-					<a>Created by: {{ owner }}</a>
+					<a href="#{{ summary }}">{{ summary }}</a>
 				</li>
 			{{/each}}
 			</ul>

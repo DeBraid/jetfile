@@ -14,16 +14,13 @@
 	homeRoute: '/'
 	dashboardRoute: '/dashboard'
 	socialMedia:
-		facebook:
-			url: 'http://facebook.com/benjaminpeterjones'
-			icon: 'facebook'
 		twitter:
-			url: 'http://twitter.com/BenPeterJones'
+			url: 'http://twitter.com/Royal_Arse'
 			icon: 'twitter'
 		github:
-			url: 'http://github.com/yogiben'
+			url: 'http://github.com/DeBraid'
 			icon: 'github'
 		info:
-			url: 'http://meteorfactory.io'
+			url: 'http://cacheflow.ca'
 			icon: 'link'
 	publicRoutes: ['home']

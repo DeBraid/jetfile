@@ -12,9 +12,9 @@
                                 {{#unless currentUser}}
                                 <a id="home-login" href="{{pathFor 'entrySignIn'}}"><li>Login</li></a>
                                 {{/unless}}
-                                {{#each socialMedia}}
+                                <!-- {{#each socialMedia}}
                                 <a href="{{url}}" target="_blank"><li class="fa fa-{{icon}}"></li></a>
-                                {{/each}}
+                                {{/each}} -->
                             </ul>
                         </div>
                     </div>
@@ -54,21 +54,21 @@
                         <i class="fa fa-plane fa-3x"></i>
                     </div>
                     <p class="icntitle">1. Step 1</p>
-                    <p class="icnp">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="icnp"> Create an account.</p>
                 </div>
                 <div class="col-md-4 wow fadeInUp animated" data-wow-delay="0.8s">
                     <div class="iconbox">
                         <i class="fa fa-bolt fa-3x"></i>
                     </div>
                     <p class="icntitle">2. Step 2</p>
-                    <p class="icnp"> Oratio me istius philosophi non offendit; Qua tu etiam inprudens utebare non numquam.</p>
+                    <p class="icnp"> File out the report on your phone, tablet or computer.  Include photos where required.</p>
                 </div>
                 <div class="col-md-4 wow fadeInRight animated" data-wow-delay="1.2s">
                     <div class="iconbox">
                         <i class="fa fa-check fa-3x"></i>
                     </div>
                     <p class="icntitle">3. Step 3</p>
-                    <p class="icnp">Et ille ridens: Video, inquit, quid agas; Duo Reges: constructio interrete.</p>
+                    <p class="icnp">Hit send.  Email final report to anyone.  Dynamically increase or decrease report priority.</p>
                 </div>
             </div>
         </div>
@@ -84,11 +84,11 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h3>A revolutionary product</h3>
-                    <p>Do really cool stuff really quickly</p>
+                    <p>Less downtime, submit reports really quickly</p>
                     <p class="text-center">
-                    <a href="{{Config.about}}" target="_blank" class="btn btn-success">
-                    Made by MeteorFactory
-                    </a>
+                    {{#unless currentUser}}
+                    <a id="home-login" href="{{pathFor 'entrySignIn'}}"><li>Login</li></a>
+                    {{/unless}}
                     </p>
                 </div>
                 <div class="col-sm-6">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="col-md-8  wow fadeInUp animated">
-                    <img src="img/screenshot.png" class="img-responsive wow" data-wow-delay="0.6s" alt="picture">
+                    <img src="img/fc_logo.gif" class="img-responsive wow" data-wow-delay="0.6s" alt="picture">
                 </div>
             </div>
         </div>
