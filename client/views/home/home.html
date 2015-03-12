@@ -5,16 +5,13 @@
         <header>
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container">
-                    <div class="container">
+                    <div class="row">
                         <a class="navbar-brand" href="{{pathFor 'home'}}">{{Config.name}}</a>
                         <div id="main-nav" class="navbar-collapse">
                             <ul class="social-links">
                                 {{#unless currentUser}}
                                 <a id="home-login" href="{{pathFor 'entrySignIn'}}"><li>Login</li></a>
                                 {{/unless}}
-                                <!-- {{#each socialMedia}}
-                                <a href="{{url}}" target="_blank"><li class="fa fa-{{icon}}"></li></a>
-                                {{/each}} -->
                             </ul>
                         </div>
                     </div>
