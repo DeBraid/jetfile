@@ -5,4 +5,5 @@ AutoForm.hooks
 
 Template.user.helpers 
   currentUser: ->
+    console.log Meteor.user()
     Meteor.user()

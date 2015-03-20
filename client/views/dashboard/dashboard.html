@@ -112,14 +112,21 @@
 </template>
 
 <template name="user">
-{{#with  currentUser }}
-	{{#with profile }}
-	  <h3>{{ firstName }} {{ lastName }} <span class="">{{ crew }} Crew</span></h3>
-		<h4>Emp# {{  empNum }}</h4>
-		<p>{{  phone }}</p>
-	{{/with}}
-	{{#each emails }}
-		<p>{{address}}</p>
-	{{/each}}
+{{#with currentUser }}
+	
+		{{#if profile.firstName}}
+		  <h3>{{ profile.firstName }} {{ profile.lastName }} 
+		  	<span style="font-size:16px">{{ profile.empNum }}</span>
+	  	</h3>
+			<h4>{{ profile.crew }} Crew</h4>
+			<p>{{ profile.phone }}</p>
+			{{#each emails }}
+				<p>{{address}}</p>
+			{{/each}}
+
+		{{ else }}
+			<a href="{{pathFor 'profile' }}">Complete profile...</a>
+		{{/if}}
+
 {{/with}}
 </template>

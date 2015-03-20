@@ -22,6 +22,7 @@ Schemas.UserProfile = new SimpleSchema(
   empNum:
     type: String
     label: 'Employee ID#' 
+    optional: true    
 
   phone:
     type: String
