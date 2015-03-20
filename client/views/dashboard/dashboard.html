@@ -20,15 +20,11 @@
 				<h3 class="panel-title">Create Report</h3>
 			</div>
 			<div class="panel-body">
+				{{> user}}
 				{{#autoForm id="add" collection="Posts" type="insert"}}
-				{{> afQuickField name="summary" }}
-				{{> afQuickField name="name" }}
-				{{> afQuickField name="email" }}
-				{{> afQuickField name="position" }}
-				{{> afQuickField name="department" }}
 				{{> afQuickField name="location" }}
+				{{> afQuickField name="summary" }}
 				{{> afQuickField name="description" }}
-				<!-- {{> afQuickField name="picture"}} -->
 				{{> afQuickField name="injury" }}
 				{{> afQuickField name="damage" }}
 				{{> afQuickField name="picture"}}
@@ -113,4 +109,17 @@
 		</div>
 	</div>
 	{{/if}}
+</template>
+
+<template name="user">
+{{#with  currentUser }}
+	{{#with profile }}
+	  <h3>{{ firstName }} {{ lastName }} <span class="">{{ crew }} Crew</span></h3>
+		<h4>Emp# {{  empNum }}</h4>
+		<p>{{  phone }}</p>
+	{{/with}}
+	{{#each emails }}
+		<p>{{address}}</p>
+	{{/each}}
+{{/with}}
 </template>

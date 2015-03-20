@@ -31,12 +31,20 @@ Schemas.Posts = new SimpleSchema
       autolocate: true
 
 	injury:
-		type:String
-		max: 60
+		type:Boolean
+		label: 'Was there an Injury?'
+		autoform:
+				type: 'boolean-select'
+				trueLabel: 'Yes, someone was hurt.'
+				falseLabel: 'No, we\'re all good here.'
 
 	damage:
-		type:String
-		max: 60		
+		type:Boolean
+		label: 'Damage to aircraft?'
+		autoform:
+				type: 'boolean-select'
+				trueLabel: 'Yes, I\'ll attach pictures.'
+				falseLabel: 'No aircraft damage.'
 
 	description:
 		type: String

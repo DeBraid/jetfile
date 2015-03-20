@@ -1,3 +1,5 @@
+@User = new Meteor.Collection('user');
+
 Schemas.UserProfile = new SimpleSchema(
 
   picture:
@@ -16,6 +18,14 @@ Schemas.UserProfile = new SimpleSchema(
   lastName:
     type: String
     optional: true
+
+  empNum:
+    type: String
+    label: 'Employee ID#' 
+
+  phone:
+    type: String
+    optional: true  
 
   crew:
     type: String

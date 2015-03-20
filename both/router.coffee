@@ -20,6 +20,7 @@ Router.map ->
         Meteor.subscribe 'favorites'
         Meteor.subscribe 'comments'
         Meteor.subscribe 'attachments'
+        Meteor.subscribe 'user'
       ]
     onBeforeAction: ->
       url = Session.get 'redirectToAfterSignIn'
@@ -29,6 +30,7 @@ Router.map ->
       @next()
     data: ->
       Posts: Posts.find({},{sort: {createdAt: -1}}).fetch()
+      User: User.find({}).fetch()
   @route "profile",
     path: "/profile"
     waitOn: ->
