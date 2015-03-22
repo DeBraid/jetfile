@@ -20,3 +20,19 @@ Was there an injury?
 
 Was there aircraft damage? if yes take photo
 
+
+Date / Time
+Title
+Aircraft Type
+
+GENERAL: reported by, employee #, email/phone#, Flight #, Tail #, Position,
+
+Departure City (Current Location OR Enter), Dep Time, Incident City,
+Destination: , arrival time, diverted?
+
+Effect on Flight
+
+Damage: 
+
+
+REQUIRED: Title, aircraft type, reported by (Name, emp ID) 
