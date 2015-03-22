@@ -5,21 +5,6 @@ Schemas.Posts = new SimpleSchema
 		type:String
 		max: 80
 
-	# name:
-	# 	type:String
-	# 	max: 60
-
-	# email:
-	# 	type:String
-	# 	max: 30
-
-	# position:
-	# 	type:String
-	# 	max: 30
-
-	# department:
-	# 	type:String
-	# 	max: 30
 	description:
 		type: String
 		autoform:
