@@ -1,4 +1,4 @@
-Deps.autorun ->
+Tracker.autorun ->
 	if Session.get 'language'
 		Session.set 'Language', Languages[Session.get 'language']
 	else

@@ -113,20 +113,33 @@
 
 <template name="user">
 {{#with currentUser }}
-	
-		{{#if profile.firstName}}
-		  <h3>{{ profile.firstName }} {{ profile.lastName }} 
-		  	<span style="font-size:16px">{{ profile.empNum }}</span>
-	  	</h3>
-			<h4>{{ profile.crew }} Crew</h4>
-			<p>{{ profile.phone }}</p>
-			{{#each emails }}
-				<p>{{address}}</p>
-			{{/each}}
-
+		
+		{{#if profile.firstName }}
+			{{> currentUserProfile }}
 		{{ else }}
-			<a href="{{pathFor 'profile' }}">Complete profile...</a>
+			{{> alertCompleteProfile }}
 		{{/if}}
 
 {{/with}}
 </template>
+
+<template name="currentUserProfile">
+	  <div class="alert alert-success" role="alert">
+	  	<h3>{{ profile.firstName }} {{ profile.lastName }} 
+		  	<span style="font-size:16px;">{{ profile.empNum }}</span>
+	  	</h3>
+			<h4>{{ profile.crew }} Crew</h4>
+			<p>{{ profile.phone }}</p>
+			{{#each emails }}
+				<p>{{ address }}</p>
+			{{/each}}
+	  </div>
+</template>
+
+<template name="alertCompleteProfile">
+	<div class="alert alert-warning" role="alert">
+		<a href="{{pathFor 'profile' }}" style="color:inherit;">
+			<i class="fa fa-warning"></i> Finish your profile to submit a report.
+		</a>
+	</div>
+</template>	

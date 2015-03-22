@@ -3,7 +3,6 @@ AutoForm.hooks
 		onError: (operation,error)->
 			App.alertError(error)
 
-Template.user.helpers 
+Template.dashboard.helpers 
   currentUser: ->
-    console.log Meteor.user()
     Meteor.user()
