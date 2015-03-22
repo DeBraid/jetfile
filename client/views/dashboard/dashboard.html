@@ -20,19 +20,29 @@
 				<h3 class="panel-title">Create Report</h3>
 			</div>
 			<div class="panel-body">
-				{{> user}}
-				{{#autoForm id="add" collection="Posts" type="insert"}}
-				{{> afQuickField name="location" }}
-				{{> afQuickField name="summary" }}
-				{{> afQuickField name="description" }}
-				{{> afQuickField name="injury" }}
-				{{> afQuickField name="damage" }}
-				{{> afQuickField name="picture"}}
-				<!-- {{> afFileUpload name="picture" collection="Attachments"}} -->
-				<button type="submit" class="btn btn-primary">Add Post</button>
-				{{/autoForm}}
+				{{#with currentUser }}
+					{{#if profile.firstName }}
+						{{> currentUserProfile }}
+						{{> addFormBody }}
+					{{ else }}
+						{{> alertCompleteProfile }}
+					{{/if}}
+				{{/with}}
 			</div>
 	</div>
+</template>
+
+<template name="addFormBody">
+	{{#autoForm id="add" collection="Posts" type="insert"}}
+		{{> afQuickField name="location" }}
+		{{> afQuickField name="summary" }}
+		{{> afQuickField name="description" }}
+		{{> afQuickField name="injury" }}
+		{{> afQuickField name="damage" }}
+		{{> afQuickField name="picture"}}
+		<!-- {{> afFileUpload name="picture" collection="Attachments"}} -->
+		<button type="submit" class="btn btn-primary">Add Post</button>
+	{{/autoForm}}
 </template>
 
 <template name="addWithModal">
@@ -112,28 +122,20 @@
 </template>
 
 <template name="user">
-{{#with currentUser }}
-		
-		{{#if profile.firstName }}
-			{{> currentUserProfile }}
-		{{ else }}
-			{{> alertCompleteProfile }}
-		{{/if}}
-
-{{/with}}
+	
 </template>
 
 <template name="currentUserProfile">
-	  <div class="alert alert-success" role="alert">
-	  	<h3>{{ profile.firstName }} {{ profile.lastName }} 
-		  	<span style="font-size:16px;">{{ profile.empNum }}</span>
-	  	</h3>
-			<h4>{{ profile.crew }} Crew</h4>
-			<p>{{ profile.phone }}</p>
-			{{#each emails }}
-				<p>{{ address }}</p>
-			{{/each}}
-	  </div>
+  <div class="alert alert-success" role="alert">
+  	<h3>{{ profile.firstName }} {{ profile.lastName }} 
+	  	<span style="font-size:16px;">{{ profile.empNum }}</span>
+  	</h3>
+		<h4>{{ profile.crew }} Crew</h4>
+		<p>{{ profile.phone }}</p>
+		{{#each emails }}
+			<p>{{ address }}</p>
+		{{/each}}
+  </div>
 </template>
 
 <template name="alertCompleteProfile">
