@@ -20,6 +20,10 @@ Schemas.Posts = new SimpleSchema
 	# department:
 	# 	type:String
 	# 	max: 30
+	description:
+		type: String
+		autoform:
+			rows: 5
 
 	location:
     type: String
@@ -46,10 +50,6 @@ Schemas.Posts = new SimpleSchema
 				trueLabel: 'Yes, I\'ll attach pictures.'
 				falseLabel: 'No aircraft damage.'
 
-	description:
-		type: String
-		autoform:
-			rows: 5
 
 	createdAt: 
 		type: Date

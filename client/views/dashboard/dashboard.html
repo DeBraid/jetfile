@@ -13,7 +13,6 @@
 	</div>
 </template>
 
-
 <template name="add">
 	<div class="panel panel-default">
 			<div class="panel-heading">
@@ -34,26 +33,15 @@
 
 <template name="addFormBody">
 	{{#autoForm id="add" collection="Posts" type="insert"}}
-		{{> afQuickField name="location" }}
 		{{> afQuickField name="summary" }}
 		{{> afQuickField name="description" }}
 		{{> afQuickField name="injury" }}
 		{{> afQuickField name="damage" }}
 		{{> afQuickField name="picture"}}
+		{{> afQuickField name="location" }}
 		<!-- {{> afFileUpload name="picture" collection="Attachments"}} -->
 		<button type="submit" class="btn btn-primary">Add Post</button>
 	{{/autoForm}}
-</template>
-
-<template name="addWithModal">
-	<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Add with a modal</h3>
-			</div>
-			<div class="panel-body">
-				<a href="#afModal" data-toggle="modal" class="btn btn-primary" collection="Posts" operation="insert" fields="title,content,picture">Add a new post</a>
-			</div>
-	</div>
 </template>
 
 <template name="posts">
@@ -69,10 +57,13 @@
 					</h3>
 				</div>
 				<div class="panel-body">
+					<h5>{{ description }}</h5>
 					<p class="text-center">
+					<div class="col-sm-12">
 						{{#with getDoc picture 'Attachments'}}
-							<img src="{{url}}" class="img-thumbnail img-rounded">
+							<img src="{{url}}" class="img-thumbnail img-rounded img-responsive">
 						{{/with}}
+					</div>
 					</p>
 					<div class="media">
 						<a class="pull-left" href="#">
@@ -121,11 +112,8 @@
 	{{/if}}
 </template>
 
-<template name="user">
-	
-</template>
-
 <template name="currentUserProfile">
+	<p>Reported by:</p>
   <div class="alert alert-success" role="alert">
   	<h3>{{ profile.firstName }} {{ profile.lastName }} 
 	  	<span style="font-size:16px;">{{ profile.empNum }}</span>
